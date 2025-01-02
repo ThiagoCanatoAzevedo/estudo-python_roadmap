@@ -1,0 +1,96 @@
+- Arrays: Are a collection of items stored consecutively in the memory
+  * IN C++ *:
+    * Items need to have same type;
+      - int numbers[3] = {10, 20, '30'} --> Incorrect
+ 
+    * Fixed in size (can't allocate more space in memory)
+      - int numbers[3] = {10, 20, 30};
+      - int numbers[4] = {40} --> Error 
+
+- In other languages, such as JavaScript or Python, the array can have different types of items and add more items to an array, 
+because it can allocate more space in memory. However, it can cause Memory Leak.
+
+- Operations you can perform on Arrays:
+  1. Accessing an element (at index): Time Complexity O(1) - Constant
+      |- const numbers = [1, 2, 3, 4, 5]
+      |- console.log(numbers[0]) --> output = 1 
+  
+  2. Inserting an element (at index): Time Complexity O(n) - Linear
+      1. Array = [1, 2, 4, 5] | If we want to add a new element in this array, we will need to push all the items to 
+                                the right (after the index we want to put the new element)
+      2. Array = [1, 2, 3, 4, 5] | We pushed all element after '2' to the right and implemented '3'
+
+  3. Deleting an element (at index): Time Complexity O(n) - Linear
+      1. Array = [1, 2, 7, 3, 4] | If we want to remove an element in this array, we will need to remove this element 
+                                   and then, pull all the last elements to the left (the elements after the item removed)
+
+      2. Array = [1, 2, 3, 4] | We removed '7' and pulled all the elements after it to the left
+
+  4. Updating an element (at index): Time Complexity O(1) - Constant
+     1. const array = [1, 2, 8, 4, 5] | We need to get the index of the element, and then replace it
+        const array[2] = 3
+      
+     2. const array = [1, 2, 3, 4, 5] | We got the index 2 and changed the '7' to '3'
+
+------------------------------------------------------------------------------------------------------------------------
+
+- Linked Lists: Are a linear collection of elements where each element points to next element in memory
+  * Items can be placed anywhere in the memory (they don't have to be consecutive);
+  * Dynamic size (can add more elements)
+  * The elements can be of different types 
+  * Each element is called Node
+  * Each Node has two parts: the data and the memory address of the next node in the list
+  * Each Node takes some additional space in memory (Except the last Node in the Linked List. This item just takes the 
+  data as a space, because the memory address is null)
+  * First Node of the Linked List: called ad 'Head'
+  * Last Node of the Linked List: called as 'Tail'
+
+- Operations you can perform on Linked Lists:
+  1. Inserting an element: Time Complexity O(1) - Constant
+    * At start: 
+      1. R-O-A-null   | 'R' is the Head of the Linked List. Let's insert the letter 'T'
+      2. T-R-O-A-null | When you do this, the head is no longer 'R', because 'T' is at the begging
+                        and 'T' will refer to 'R'
+
+    * At end:
+      1. T-R-O-A-null   | 'A' is point to null, because it's the last char ('A' is the Tail)
+      2. T-R-O-A-D-null | Now, 'A' is referring to 'D', 'D' is referring to null and 'D' is the Tail   
+
+    * In the middle:
+      1. T-R-O-A-D-null   | If we want to put a char in the middle, we need to refer this new letter to the next letter in the linked list
+                            and, also, refer the previous letter to this new one
+      2. T-R-B-O-A-D-null | In this case, the new letter i 'B'. So we referred 'B' to 'O' and then referred 'R' to 'B'
+
+  2. Deleting an element: 
+    * At start: Time Complexity O(1) - Constant
+      1. T-B-O-A-D-null | All we need to do is to change the Head to be the second element and then remove the first element
+      2. B-O-A-D-null
+
+    * At end:
+      1. B-O-A-D-null | We need to refer the second last element to null, and remove the last element
+      2. B-O-A-null
+
+    * In the middle:
+      1. B-O-A-null | Take the node before the node we want to delete, refer to the node after the node that will be deleted and remove the node
+      2. B-A
+
+  3. Traversing a Linked List (Visit each element of the list): Time Complexity 0(n) - Linear
+    1. T-B-O-A-D | Start with the Head node, read the value and read the address of the next node. Do this until the last node.
+                   To check if the last node is reached, we just check if the address of the next value is 'null'
+
+  4. Accessing an element: Time Complexity O(n) - Linear
+    1. T-B-O-A-D | Will access the third node: We don't have indexes here, so we will need to access all the nodes from 
+                   the beginning until we reach the third value (in this case)
+
+- Types of Linked Lists:
+  1. Singly Linked List: Here wee have nodes, each node has two parts: first part is the data of this node and the 
+  second is the address to the next node 
+
+  2. Doubly Linked List: Is similar to the Singly, but each node not only points to the next node, but it also has the 
+  reference to the previous node. Here, each node has three parts: The address of the previous node, your data and the 
+  address to the next node
+
+  3. Circular Linked List: In this, the last node does not points to 'null', but to the Head of the Linked List
+
+  4. Doubly Circular Linked List: Here, each node points to the next and previous node, the last node points to the Head of the List
+  and the Head points to the Tail (last node)

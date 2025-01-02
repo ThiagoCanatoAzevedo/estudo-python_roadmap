@@ -1,0 +1,21 @@
+- Summary: Data structures are ways to organize and store data for efficient usage. 
+They are essential for creating fast algorithms and solving problems effectively.
+
+- Main Types of Data Structures
+    - 1. Linear Structures
+        * Array: A fixed-size list of elements of the same type. Example: a list of numbers.
+        * Linked List: A list where each element points to the next. Useful for insertions and deletions.
+        * Stack: Follows the LIFO (Last In, First Out) principle. Used in recursion and history tracking.
+        * Queue: Follows the FIFO (First In, First Out) principle. Example: customer service queues.
+
+    - 2. Non-Linear Structures
+        * Tree: A hierarchical structure with nodes organized into levels. Example: file directories.
+        * Graph: A set of points (vertices) connected by lines (edges). Example: social networks.
+        * Hash Table: Uses hash functions to store and retrieve data quickly.
+        * These structures help solve problems efficiently, such as quick searches, data organization, 
+        and network navigation.
+------------------------------------------------------------------------------------------------------------------------
+Space in memory:
+- Numbers: 2 bytes in the memory 
+- Chars: 1 bytes in the memory
+- Booleans: 1 byte in the memory 
